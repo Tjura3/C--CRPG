@@ -15,6 +15,8 @@ namespace C__CRPG
             GameEngine.Initialize();
             _player.Name = "Hiro the dense";
 
+
+            Console.WriteLine("Enter to Exit.");
             Console.ReadLine();
         }
     }
