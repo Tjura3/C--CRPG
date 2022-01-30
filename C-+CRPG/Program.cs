@@ -13,7 +13,7 @@ namespace C__CRPG
         static void Main(string[] args)
         {
             GameEngine.Initialize();
-            _player.Name = "Hiro the dense";
+            _player.Name = "Hiro the Dense";
 
             Console.ReadLine();
         }
