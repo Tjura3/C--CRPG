@@ -7,7 +7,7 @@ namespace C__CRPG
     public class World
     {
         public static readonly string WorldName = "Bjork";
-        public static readonly List<Location> Locations = new List<Location>();
+        public static readonly List<Location> Locations = new List<Location>(); 
 
         //Start providing IDs for locations
         public const int LOCATION_ID_HOME = 1;     //constants are almost always upercase, and use the underscore
@@ -39,8 +39,29 @@ namespace C__CRPG
             Locations.Add(home);
             Locations.Add(forestPath);
             Locations.Add(lab);
-
+            
         }
+
+        public static Location LocationByID(int ID)
+        {
+            foreach (Location loc in Locations)
+            {
+                if(loc.ID == ID)
+                {
+                    return loc;
+                }
+            }
+        }
+
+        public static void ListLocation()
+        {
+            Console.WriteLine("These are the locations in the world");
+            foreach(Location loc in Locations)
+            {
+                Console.WriteLine($"\t{loc.Name}");
+            }
+        }
+
 
     }
 }
