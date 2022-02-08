@@ -42,13 +42,13 @@ namespace C__CRPG
             
         }
 
-        public static Location LocationByID(int ID)
+        public static Location LocationByID(int ID)     //Gives us location if we know its ID
         {
             foreach (Location loc in Locations)
             {
                 if(loc.ID == ID)
                 {
-                    return loc;
+                    return loc;   //loc is a type of location
                 }
             }
         }
