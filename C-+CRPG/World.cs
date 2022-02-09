@@ -33,7 +33,7 @@ namespace C__CRPG
             home.LocationToNorth = forestPath;
             forestPath.LocationToEast = lab;
             lab.LocationToWest = forestPath;
-            forestPath.LocationToNorth = home;      //When you go north when you cant go north, system returns null.
+            forestPath.LocationToSouth = home;      //When you go north when you cant go north, system returns null.
 
             //Create our LISTS of locations.
             Locations.Add(home);

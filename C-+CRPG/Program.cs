@@ -66,7 +66,7 @@ namespace C__CRPG
             }
             else
             {
-                Console.WriteLine("I dont understand mublejargon.");
+                Console.WriteLine("I dont understand the language of tom.");
             }
 
         }//parse
@@ -82,4 +82,5 @@ namespace C__CRPG
 
 
     }
+
 }

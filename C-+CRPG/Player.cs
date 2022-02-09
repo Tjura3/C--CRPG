@@ -13,6 +13,11 @@ namespace C__CRPG
         {
             CurrentLocation = loc;
         }
+
+
+
+        #region Movement in cardinal direcitons.
+
         public void MoveNorth()
         {
             if(CurrentLocation.LocationToNorth != null)
@@ -28,7 +33,7 @@ namespace C__CRPG
 
         public void MoveSouth()
         {
-            if (CurrentLocation.LocationToNorth != null)
+            if (CurrentLocation.LocationToSouth != null)
             {
                 MoveTo(CurrentLocation.LocationToSouth);
             }
@@ -40,7 +45,7 @@ namespace C__CRPG
 
         public void MoveEast()
         {
-            if (CurrentLocation.LocationToNorth != null)
+            if (CurrentLocation.LocationToEast != null)
             {
                 MoveTo(CurrentLocation.LocationToEast);
             }
@@ -52,7 +57,7 @@ namespace C__CRPG
 
         public void MoveWest()
         {
-            if (CurrentLocation.LocationToNorth != null)
+            if (CurrentLocation.LocationToWest != null)
             {
                 MoveTo(CurrentLocation.LocationToWest);
             }
@@ -61,7 +66,7 @@ namespace C__CRPG
                 Console.WriteLine("You cant go there.");
             }
         }
-
+        #endregion
 
     }//class player
 }
