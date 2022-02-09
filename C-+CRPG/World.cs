@@ -51,6 +51,7 @@ namespace C__CRPG
                     return loc;   //loc is a type of location
                 }
             }
+            return null;
         }
 
         public static void ListLocation()

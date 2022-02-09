@@ -7,7 +7,61 @@ namespace C__CRPG
     public class Player
     {
         public string Name { set; get; }
+        public Location CurrentLocation { set; get; }
+       
+        public void MoveTo(Location loc)
+        {
+            CurrentLocation = loc;
+        }
+        public void MoveNorth()
+        {
+            if(CurrentLocation.LocationToNorth != null)
+            {
+                MoveTo(CurrentLocation.LocationToNorth);
+            }
+            else
+            {
+                Console.WriteLine("You cant go there.");
+            }
+        }
 
 
-    }
+        public void MoveSouth()
+        {
+            if (CurrentLocation.LocationToNorth != null)
+            {
+                MoveTo(CurrentLocation.LocationToSouth);
+            }
+            else
+            {
+                Console.WriteLine("You cant go there.");
+            }
+        }
+
+        public void MoveEast()
+        {
+            if (CurrentLocation.LocationToNorth != null)
+            {
+                MoveTo(CurrentLocation.LocationToEast);
+            }
+            else
+            {
+                Console.WriteLine("You cant go there.");
+            }
+        }
+
+        public void MoveWest()
+        {
+            if (CurrentLocation.LocationToNorth != null)
+            {
+                MoveTo(CurrentLocation.LocationToWest);
+            }
+            else
+            {
+                Console.WriteLine("You cant go there.");
+            }
+        }
+
+
+    }//class player
 }
