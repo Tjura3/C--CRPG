@@ -4,11 +4,28 @@ using System.Text;
 
 namespace C__CRPG
 {
-    public class Player
+    public class Player : LivingCreature
     {
-        public string Name { set; get; }
-        public Location CurrentLocation { set; get; }
-       
+        public string Name;
+        public int Gold;
+        public int ExperiencePoints;
+        public int Level;
+        public Location CurrentLocation;
+        public List<BasicItem> Inventory;
+        public List<PlayerQuest> Quests;
+
+        public Player(string name, int currentHitPoints, int maximumHitPoints, int gold, int experiencePoints, int level) :base(currentHitPoints,maximumHitPoints)
+        {
+            Name = name;
+            Gold = gold;
+            ExperiencePoints = experiencePoints;
+            Level = level;
+            Inventory = new List<BasicItem>();
+            Quests = new List<PlayerQuest>();
+        }
+
+        public Player() { }
+
         public void MoveTo(Location loc)
         {
             CurrentLocation = loc;

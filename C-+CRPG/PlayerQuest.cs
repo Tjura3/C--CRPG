@@ -4,7 +4,7 @@ using System.Text;
 
 namespace C__CRPG
 {
-    class PlayerQuest
+    public class PlayerQuest
     {
         public Quest Details;
         public bool IsCompleted;

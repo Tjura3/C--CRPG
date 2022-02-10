@@ -9,6 +9,9 @@ namespace C__CRPG
         public int ID;
         public string Name;
         public string Description;
+        public Items ItemRequiredToEnter;
+        public Quest QuestAvalibleHere;
+        public Monster MonsterLivingHere;
         public Location LocationToNorth;
         public Location LocationToSouth;
         public Location LocationToEast;
@@ -16,7 +19,7 @@ namespace C__CRPG
 
 
         //Constructor
-        public Location(int iD, string name, string description)
+        public Location(int iD, string name, string description, Items itemRequiredToEnter = null, Quest questAvailableHere = null, Monster monsterLivingHere=null)
         {
             ID = iD;
             Name = name;

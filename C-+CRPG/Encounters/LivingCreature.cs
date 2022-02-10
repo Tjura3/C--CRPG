@@ -13,5 +13,6 @@ namespace C__CRPG
             CurrentHitPoints = currentHitPoints;
             MaximumHitPoints = maximumHitPoints;
         }
+        public LivingCreature() { }
     }
 }
