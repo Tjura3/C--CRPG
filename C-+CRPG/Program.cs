@@ -15,6 +15,9 @@ namespace C__CRPG
             GameEngine.Initialize();
                                                                             //_player.Name = "Hiro the Dense"; Obsilete since V2 05
             _player.MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
+            //Console.WriteLine(RandomNumberGenorator.NumberBetween(4, 10)); rng test
+
+
 
            while (true)
            {
@@ -45,22 +48,22 @@ namespace C__CRPG
             if (input.Contains("help"))
             {
                 Console.WriteLine("Help is coming later... stay tuned");
-            }else if(input.Contains("look"))
+            } else if (input.Contains("look"))
             {
                 DisplayCurrentLocation();
-            }else if (input.Contains("north"))
+            } else if (input.Contains("north") || input == "n")
             {
                 _player.MoveNorth();
             }
-            else if (input.Contains("south"))                       //These if statements look HORRENDUS.
+            else if (input.Contains("south") || input == "s")                       //These if statements look HORRENDUS.
             {
                 _player.MoveSouth();
             }
-            else if (input.Contains("east"))
+            else if (input.Contains("east") || input == "e")
             {
                 _player.MoveEast();
             }
-            else if (input.Contains("west"))
+            else if (input.Contains("west") || input == "w")
             {
                 _player.MoveWest();
             }

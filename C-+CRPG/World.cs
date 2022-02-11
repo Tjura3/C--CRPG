@@ -229,6 +229,7 @@ namespace C__CRPG
             farmersField.LocationToEast = farmhouse;
 
             alchemistHut.LocationToSouth = townSquare;
+
             alchemistHut.LocationToNorth = alchemistsGarden;
 
             alchemistsGarden.LocationToSouth = alchemistHut;
