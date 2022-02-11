@@ -8,13 +8,13 @@ namespace C__CRPG
     {
         public int ID;
         public string Name;
-        public int Description;
+        public string Description;
         public int RewardExperiencePoints;
         public int RewardGold;
         public Items RewardItem; //was taken out of constructor in V2:04
         public List<QuestCompletionItem> QuestCompletionItems;  //plural
 
-        public Quest(int iD, string name, int description, int rewardExperiencePoints, int rewardGold, Items rewardItem     /*,List<QuestCompletionItem> questCompletionItems*/)
+        public Quest(int iD, string name, string description, int rewardExperiencePoints, int rewardGold/*, Items rewardItem ,List<QuestCompletionItem> questCompletionItems*/)
         {
             ID = iD;
             Name = name;

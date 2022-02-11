@@ -7,13 +7,13 @@ namespace C__CRPG
     class Program
     {
 
-        private static Player _player = new Player();
-
+        //private static Player _player = new Player();
+        private static Player _player = new Player("Hiro the Dense", 10, 10, 20, 0, 1);
 
         static void Main(string[] args)
         {
             GameEngine.Initialize();
-            _player.Name = "Hiro the Dense";
+                                                                            //_player.Name = "Hiro the Dense"; Obsilete since V2 05
             _player.MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
 
            while (true)

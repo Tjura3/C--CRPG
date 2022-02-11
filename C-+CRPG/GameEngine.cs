@@ -6,14 +6,19 @@ namespace C__CRPG
 {
     public static class GameEngine
     { 
-        public static string Version = "0.0.2.1";
+        public static string Version = "0.0.2.5";
        
         public static void Initialize()
         {
             Console.WriteLine("Initializing Game Engine {0}", Version);
             Console.WriteLine("\n\nWelcome to the world of {0}", World.WorldName);
             Console.WriteLine();
-            World.ListLocation();
+
+            //  V2:05 Aparently, this is used for debugging?     
+            World.ListLocations(); //World.ListLocation();
+            World.ListMonsters();
+            World.ListQuests();
+            World.ListItems();
         }
 
     }

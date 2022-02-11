@@ -25,7 +25,7 @@ namespace C__CRPG
             Name = name;
             Description = description;
         }
-
+        public Location() { }
        
 
     }
