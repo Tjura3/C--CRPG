@@ -74,7 +74,7 @@ namespace C__CRPG
 
         }//parse
         
-        private static void DisplayCurrentLocation()
+        public static void DisplayCurrentLocation()
         {
             Console.WriteLine("You are at: {0}", _player.CurrentLocation.Name);
             if(_player.CurrentLocation.Description != " ")

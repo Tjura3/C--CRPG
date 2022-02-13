@@ -5,7 +5,7 @@
 -Inventory
 +Random number
 -WhereAmI (Simular to look, when move, show description)
--Shortcut navigation
++Shortcut navigation
 -Location Requierment
 
 
