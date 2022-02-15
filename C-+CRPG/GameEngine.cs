@@ -6,11 +6,15 @@ namespace C__CRPG
 {
     public static class GameEngine
     { 
+       
         public static string Version = "0.0.3.1";
        
         public static void Initialize()
         {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("Initializing Game Engine {0}", Version);
+            Console.ForegroundColor = ConsoleColor.White;
+
             Console.WriteLine("\n\nWelcome to the world of {0}", World.WorldName);
             Console.WriteLine();
 

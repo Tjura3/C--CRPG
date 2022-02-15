@@ -40,6 +40,7 @@ namespace C__CRPG
             if(CurrentLocation.LocationToNorth != null)
             {
                 MoveTo(CurrentLocation.LocationToNorth);
+                Program.DisplayCurrentLocation();
             }
             else
             {
@@ -53,6 +54,7 @@ namespace C__CRPG
             if (CurrentLocation.LocationToSouth != null)
             {
                 MoveTo(CurrentLocation.LocationToSouth);
+                Program.DisplayCurrentLocation();
             }
             else
             {
@@ -65,6 +67,7 @@ namespace C__CRPG
             if (CurrentLocation.LocationToEast != null)
             {
                 MoveTo(CurrentLocation.LocationToEast);
+                Program.DisplayCurrentLocation();
             }
             else
             {
@@ -77,6 +80,7 @@ namespace C__CRPG
             if (CurrentLocation.LocationToWest != null)
             {
                 MoveTo(CurrentLocation.LocationToWest);
+                Program.DisplayCurrentLocation();
             }
             else
             {
