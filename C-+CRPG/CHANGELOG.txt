@@ -1,10 +1,10 @@
 ﻿Proposed changed for V0.0.3
 +Added CHANGELOG
--Debug commands
--Stats for player
--Inventory
++Debug commands
++Stats for player
++Inventory
 +Random number
--WhereAmI (Simular to look, when move, show description)
++WhereAmI (Simular to look, when move, show description)
 +Shortcut navigation
 -Location Requierment
 

@@ -19,11 +19,20 @@ namespace C__CRPG
             Console.WriteLine();
 
             //  V2:05 Aparently, this is used for debugging?     
-            World.ListLocations(); //World.ListLocation();
+            //World.ListLocations(); //World.ListLocation();
+            //World.ListMonsters();
+            //World.ListQuests();
+            //World.ListItems();
+        }
+
+        public static void DebugInfo()
+        {
+            World.ListLocations();
             World.ListMonsters();
             World.ListQuests();
             World.ListItems();
         }
+
 
     }
 }
