@@ -94,6 +94,20 @@ namespace C__CRPG
                 Console.WriteLine("\tLevel:\t\t{0}", _player.Level);
                 Console.WriteLine("\tGold:\t\t{0}", _player.Gold);
             }
+            else if (input == "quests")
+            {
+                if(_player.Quests.Count == 0)
+                {
+                    Console.WriteLine("You live a Quest-free life.");
+                }
+                else
+                {
+                    foreach(PlayerQuest playerQuest in _player.Quests)
+                    {
+                        Console.WriteLine($"{playerQuest.Details.Name}: {0}", playerQuest.IsCompleted ? "completed" : "Incomplete");
+                    }
+                }
+            }
             
             else
             {

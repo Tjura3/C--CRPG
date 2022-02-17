@@ -11,7 +11,7 @@
 0.0.3 done on 2/16
 
 changes for 0.0.4
--healing each move
++healing each move (one HP per move)
 -Add quests to the system
 -Monster Detection
 

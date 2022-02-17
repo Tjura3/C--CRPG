@@ -49,7 +49,9 @@ namespace C__CRPG
                 }
 
             }//item check
+            CurrentHitPoints = (CurrentHitPoints >= MaximumHitPoints) ? CurrentHitPoints += 0 : CurrentHitPoints++;
             CurrentLocation = loc;
+            GameEngine.QuestProcessor(this, loc);
         }//move method
 
 

@@ -32,7 +32,30 @@ namespace C__CRPG
             World.ListQuests();
             World.ListItems();
         }
+        
+        public static void QuestProcessor(Player player, Location location)
+        {
+            //does this location have a quest?
+            if(location.QuestAvalibleHere != null)
+            {
+                bool playerAlreadyHasQuest = false;
+                bool playerAlreadyCompletedQuest = false;
+                Console.WriteLine("DEBUG: Q here!:::");
+                Console.WriteLine("\t{0}", location.QuestAvalibleHere.Description);
+                foreach(PlayerQuest playerQuest in player.Quests)
+                {
+                    if(playerQuest.Details.ID == location.QuestAvalibleHere.ID)
+                    {
+                        playerAlreadyHasQuest = true;
+                        if (playerQuest.IsCompleted)
+                        {
+                            playerAlreadyCompletedQuest = true;
+                        }
+                    }
+                }//foreach
 
+            }//location.QuestAvallibleHere
+        }//quest processor
 
     }
 }
