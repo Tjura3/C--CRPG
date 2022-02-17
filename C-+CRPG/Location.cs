@@ -24,6 +24,7 @@ namespace C__CRPG
             ID = iD;
             Name = name;
             Description = description;
+            ItemRequiredToEnter = itemRequiredToEnter;
         }
         public Location() { }
        

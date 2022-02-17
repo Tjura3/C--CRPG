@@ -6,9 +6,14 @@
 +Random number
 +WhereAmI (Simular to look, when move, show description)
 +Shortcut navigation
--Location Requierment
++Location Requierment
 
+0.0.3 done on 2/16
 
+changes for 0.0.4
+-healing each move
+-Add quests to the system
+-Monster Detection
 
 //TODO (-)
 //DONE (+)

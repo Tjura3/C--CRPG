@@ -28,8 +28,29 @@ namespace C__CRPG
 
         public void MoveTo(Location loc)
         {
+            //check to make sure the player has any required items that would gate the progress
+            if(loc.ItemRequiredToEnter != null)
+            {
+                //check for the item
+                bool playerHasRequiredItem = false;
+                foreach(BasicItem bi in this.Inventory)
+                {
+                    if (bi.Details.ID == loc.ItemRequiredToEnter.ID)
+                    {
+                        playerHasRequiredItem = true;
+                        break;
+                    }
+                }
+
+                if (!playerHasRequiredItem)
+                {
+                    Console.WriteLine("You need to have a {0} to go this way.", loc.ItemRequiredToEnter.Name);
+                    return;
+                }
+
+            }//item check
             CurrentLocation = loc;
-        }
+        }//move method
 
 
 

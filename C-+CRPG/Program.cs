@@ -19,7 +19,6 @@ namespace C__CRPG
             _player.Inventory.Add(sword);
             
             
-            
             //Console.WriteLine(RandomNumberGenorator.NumberBetween(4, 10)); rng test
 
 
