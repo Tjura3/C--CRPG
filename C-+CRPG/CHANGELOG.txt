@@ -12,8 +12,10 @@
 
 changes for 0.0.4
 +healing each move (one HP per move)
--Add quests to the system
--Monster Detection
++Add quests to the system
++Monster Detection
+
+___Completed version 4___
 
 //TODO (-)
 //DONE (+)
