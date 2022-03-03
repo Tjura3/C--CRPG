@@ -17,5 +17,12 @@ changes for 0.0.4
 
 ___Completed version 4___
 
+Version 5 Being worked on...
+
+-Weapon Equipping
+-Attack engine
+-Last bit of cleanup, abbriviate some of the commands
+-Finish Help system
+
 //TODO (-)
 //DONE (+)

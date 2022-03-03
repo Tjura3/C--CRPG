@@ -141,6 +141,7 @@ namespace C__CRPG
             Item.Add(new Items(ITEM_ID_SPIDER_FANG, "Spider fang", "Spider fangs"));
             Item.Add(new Items(ITEM_ID_SPIDER_SILK, "Spider silk", "Spider silks"));
             Item.Add(new Items(ITEM_ID_ADVENTURER_PASS, "Adventurer pass", "Adventurer passes"));
+            
         }
 
         private static void PopulateMonsters()
