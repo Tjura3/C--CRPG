@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace C__CRPG
 {
@@ -123,6 +124,41 @@ namespace C__CRPG
                     else
                     {
                         _player.UseWeapon(_player.CurrentWeapon);
+                    }
+                }
+            }
+            else if(input.StartsWith("equip "))
+            {
+                _player.UpdateWeapons();
+                string inputWeaponName = input.Substring(6).Trim();
+                if (string.IsNullOrEmpty(inputWeaponName))
+                {
+                    Console.WriteLine("You need to enter the name of the weapon, to equip it.");
+                }
+                else
+                {
+                    Weapon weaponToEquip = _player.Weapons.SingleOrDefault(x => x.Name.ToLower() == inputWeaponName
+                    || x.NamePlural.ToLower() == inputWeaponName);
+
+                    if(weaponToEquip == null)
+                    {
+                        Random wepFalse = new Random();
+                        int Tfalwep = wepFalse.Next(1,4);  //for some reason, this uses minval, but not maxval. so 1,4 is really 1,3... I have no clue why this is.
+                        
+                        switch (Tfalwep)
+                        {
+                            case 1: Console.WriteLine("You dont have that currently"); 
+                                break;
+                                
+                            case 2:
+                                Console.WriteLine("You dont have a {0}", inputWeaponName); 
+                                break;
+                            case 3:
+                                Console.WriteLine("{0} was all in your imagination.", inputWeaponName);
+                                break;
+                            
+                        }
+                        
                     }
                 }
             }
