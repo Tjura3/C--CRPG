@@ -229,5 +229,26 @@ namespace C__CRPG
 
         #endregion
 
+        public void UseWeapon(Weapon weapon)
+        {
+            Console.WriteLine("FIGHT!     --  TODO Finish later");
+        }
+
+        public void UpdateWeapons()
+        {
+            Weapons.Clear();
+            foreach(BasicItem basicItem in this.Inventory)
+            {
+                if(basicItem.Details is Weapon)
+                {
+                    if(basicItem.Quantity > 0)
+                    {
+                        Weapons.Add((Weapon)basicItem.Details);
+                    }
+                }
+            }
+        }
+
+
     }//class player
 }

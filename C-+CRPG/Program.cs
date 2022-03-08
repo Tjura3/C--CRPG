@@ -108,6 +108,24 @@ namespace C__CRPG
                     }
                 }
             }
+            else if (input.Contains("attack"))
+            {
+                if(_player.CurrentLocation.MonsterLivingHere == null)
+                {
+                    Console.WriteLine("There is nothing here to attack!");
+                }
+                else
+                {
+                    if (_player.CurrentWeapon == null)
+                    {
+                        Console.WriteLine("You arnt holding a weapon!");
+                    }
+                    else
+                    {
+                        _player.UseWeapon(_player.CurrentWeapon);
+                    }
+                }
+            }
             
             else
             {
