@@ -10,6 +10,8 @@ namespace C__CRPG
 
         //private static Player _player = new Player();
         private static Player _player = new Player("Hiro the Dense", 10, 10, 20, 0, 1);
+        static int lastRandom;
+
 
         static void Main(string[] args)
         {
@@ -145,16 +147,25 @@ namespace C__CRPG
                         Random wepFalse = new Random();
                         int Tfalwep = wepFalse.Next(1,4);  //for some reason, this uses minval, but not maxval. so 1,4 is really 1,3... I have no clue why this is.
                         
+
+                        if(lastRandom == Tfalwep)
+                        {
+                            Tfalwep++;
+                        }
+
                         switch (Tfalwep)
                         {
-                            case 1: Console.WriteLine("You dont have that currently"); 
+                            case 1: Console.WriteLine("You dont have that currently"); lastRandom = Tfalwep;
                                 break;
                                 
                             case 2:
-                                Console.WriteLine("You dont have a {0}", inputWeaponName); 
+                                Console.WriteLine("You dont have a {0}", inputWeaponName); lastRandom = Tfalwep;
                                 break;
                             case 3:
-                                Console.WriteLine("{0} was all in your imagination.", inputWeaponName);
+                                Console.WriteLine("{0} was all in your imagination.", inputWeaponName); lastRandom = Tfalwep;
+                                break;
+                            default:
+                                Console.WriteLine("try as you might, but you cant equip whats not there, that being {0}", inputWeaponName); lastRandom = Tfalwep; 
                                 break;
                             
                         }
