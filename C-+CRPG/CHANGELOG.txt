@@ -19,7 +19,7 @@ ___Completed version 4___
 
 Version 5 Being worked on...
 
--Weapon Equipping
++Weapon Equipping
 -Attack engine
 -Last bit of cleanup, abbriviate some of the commands
 -Finish Help system
