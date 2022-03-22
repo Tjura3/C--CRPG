@@ -84,11 +84,11 @@ namespace C__CRPG
             else if (input == "inventory" || input == "i")
             {
                 Console.WriteLine("\n_____Current__Inventory_____");
-                foreach(BasicItem invItem in _player.Inventory)
+                foreach (BasicItem invItem in _player.Inventory)
                 {
                     Console.WriteLine($"\t{invItem.Details.Name}: {invItem.Quantity}");
                 }
-            }else if(input == "stats")
+            } else if (input == "stats")
             {
                 Console.WriteLine($"\n\t{_player.Name}'s Stats");
                 Console.WriteLine("\tCurrent HP:\t{0}", _player.CurrentHitPoints);
@@ -99,13 +99,13 @@ namespace C__CRPG
             }
             else if (input == "quests")
             {
-                if(_player.Quests.Count == 0)
+                if (_player.Quests.Count == 0)
                 {
                     Console.WriteLine("You live a Quest-free life.");
                 }
                 else
                 {
-                    foreach(PlayerQuest playerQuest in _player.Quests)
+                    foreach (PlayerQuest playerQuest in _player.Quests)
                     {
                         Console.WriteLine($"{playerQuest.Details.Name}: {0}", playerQuest.IsCompleted ? "completed" : "Incomplete");
                     }
@@ -113,7 +113,7 @@ namespace C__CRPG
             }
             else if (input.Contains("attack"))
             {
-                if(_player.CurrentLocation.MonsterLivingHere == null)
+                if (_player.CurrentLocation.MonsterLivingHere == null)
                 {
                     Console.WriteLine("There is nothing here to attack!");
                 }
@@ -129,7 +129,7 @@ namespace C__CRPG
                     }
                 }
             }
-            else if(input.StartsWith("equip "))
+            else if (input.StartsWith("equip "))
             {
                 _player.UpdateWeapons();
                 string inputWeaponName = input.Substring(6).Trim();
@@ -142,13 +142,13 @@ namespace C__CRPG
                     Weapon weaponToEquip = _player.Weapons.SingleOrDefault(x => x.Name.ToLower() == inputWeaponName
                     || x.NamePlural.ToLower() == inputWeaponName);
 
-                    if(weaponToEquip == null)
+                    if (weaponToEquip == null)
                     {
                         Random wepFalse = new Random();
-                        int Tfalwep = wepFalse.Next(1,4);  //for some reason, this uses minval, but not maxval. so 1,4 is really 1,3... I have no clue why this is.
-                        
+                        int Tfalwep = wepFalse.Next(1, 4);  //for some reason, this uses minval, but not maxval. so 1,4 is really 1,3... I have no clue why this is.
 
-                        if(lastRandom == Tfalwep)
+
+                        if (lastRandom == Tfalwep)
                         {
                             Tfalwep++;
                         }
@@ -157,7 +157,7 @@ namespace C__CRPG
                         {
                             case 1: Console.WriteLine("You dont have that currently"); lastRandom = Tfalwep;
                                 break;
-                                
+
                             case 2:
                                 Console.WriteLine("You dont have a {0}", inputWeaponName); lastRandom = Tfalwep;
                                 break;
@@ -165,15 +165,30 @@ namespace C__CRPG
                                 Console.WriteLine("{0} was all in your imagination.", inputWeaponName); lastRandom = Tfalwep;
                                 break;
                             default:
-                                Console.WriteLine("try as you might, but you cant equip whats not there, that being {0}", inputWeaponName); lastRandom = Tfalwep; 
+                                Console.WriteLine("try as you might, but you cant equip whats not there, that being {0}", inputWeaponName); lastRandom = Tfalwep;
                                 break;
-                            
+
                         }
-                        
+
+
+                    }//if null thing
+                    else
+                    {
+                        _player.CurrentWeapon = weaponToEquip;
+                        Console.WriteLine("You equip the {0}", _player.CurrentWeapon.Name);
                     }
                 }
             }
-            
+            else if(input == "weapons")
+            {
+                _player.UpdateWeapons();
+                Console.WriteLine("_____LIST OF WEAPONS_____");
+                foreach(Weapon w in _player.Weapons)
+                {
+                    Console.WriteLine("\n\t{0}", w.Name);
+                }
+            }
+
             else
             {
                 Console.WriteLine("I dont understand the language of tom.");

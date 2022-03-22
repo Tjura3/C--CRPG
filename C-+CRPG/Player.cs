@@ -229,10 +229,114 @@ namespace C__CRPG
 
         #endregion
 
+        // /////////////////////WEAPON WORK
         public void UseWeapon(Weapon weapon)
         {
-            Console.WriteLine("FIGHT!     --  TODO Finish later");
-        }
+            Monster _currentMonster = GameEngine._currentMonster;
+            Weapon currentWeapon = weapon;
+            string fightMessage = "";
+
+            // Determine the amount of damage to do to the monster
+            int damageToMonster = RandomNumberGenorator.NumberBetween(currentWeapon.MinDamage, currentWeapon.MaxDamage);
+
+            // Apply the damage to the monster's CurrentHitPoints
+            _currentMonster.CurrentHitPoints -= damageToMonster;
+
+            // Display message
+            fightMessage += "You hit the " + _currentMonster.Name + " for " + damageToMonster.ToString() + " points." + Environment.NewLine;
+            Console.WriteLine(fightMessage);
+
+            // Check if the monster is dead
+            if (_currentMonster.CurrentHitPoints <= 0)
+            {
+                // Monster is dead
+                fightMessage += Environment.NewLine;
+                fightMessage += "You defeated the " + _currentMonster.Name + Environment.NewLine;
+
+                // Give player experience points for killing the monster
+                ExperiencePoints += _currentMonster.RewardExperiencePoints;
+                fightMessage += "You receive " + _currentMonster.RewardExperiencePoints.ToString() + " experience points" + Environment.NewLine;
+
+                // Give player gold for killing the monster 
+                Gold += _currentMonster.RewardGold;
+                fightMessage += "You receive " + _currentMonster.RewardGold.ToString() + " gold" + Environment.NewLine;
+
+
+                // Get random loot items from the monster
+                List<BasicItem> lootedItems = new List<BasicItem>();
+
+                // Add items to the lootedItems list, comparing a random number to the drop percentage
+                foreach (LootItem lootItem in _currentMonster.LootTable)
+                {
+                    if (RandomNumberGenorator.NumberBetween(1, 100) <= lootItem.DropPercentage)
+                    {
+                        lootedItems.Add(new BasicItem(lootItem.Details, 1));
+                    }
+                }
+
+                // If no items were randomly selected, then add the default loot item(s).
+                if (lootedItems.Count == 0)
+                {
+                    foreach (LootItem lootItem in _currentMonster.LootTable)
+                    {
+                        if (lootItem.IsDefaultItem)
+                        {
+                            lootedItems.Add(new BasicItem(lootItem.Details, 1));
+                        }
+                    }
+                }
+
+                // Add the looted items to the player's inventory
+                foreach (BasicItem inventoryItem in lootedItems)
+                {
+                    AddItemToInventory(inventoryItem.Details);
+
+                    if (inventoryItem.Quantity == 1)
+                    {
+                        fightMessage += "You loot " + inventoryItem.Quantity.ToString() + " " + inventoryItem.Details.Name + Environment.NewLine;
+                    }
+                    else
+                    {
+                        fightMessage += "You loot " + inventoryItem.Quantity.ToString() + " " + inventoryItem.Details.NamePlural + Environment.NewLine;
+                    }
+                }
+
+
+
+                // Add a blank line to the messages box, just for appearance.
+                fightMessage += Environment.NewLine;
+                Console.WriteLine(fightMessage);
+
+                // Move player to current location (to heal player and create a new monster to fight)
+                MoveTo(CurrentLocation);
+            }
+            else
+            {
+                // Monster is still alive
+
+                // Determine the amount of damage the monster does to the player
+                int damageToPlayer = RandomNumberGenorator.NumberBetween(0, _currentMonster.MaxDamage);
+
+                // Display message
+                fightMessage += "The " + _currentMonster.Name + " did " + damageToPlayer.ToString() + " points of damage." + Environment.NewLine;
+
+                // Subtract damage from player
+                CurrentHitPoints -= damageToPlayer;
+
+                Console.WriteLine(fightMessage);
+
+                if (CurrentHitPoints <= 0)
+                {
+                    // Display message
+                    fightMessage += "The " + _currentMonster.Name + " killed you." + Environment.NewLine;
+                    Console.WriteLine(fightMessage);
+
+                    // Move player to "Home"
+                    MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
+                }
+            }
+
+        }//use weapon
 
         public void UpdateWeapons()
         {
@@ -244,6 +348,7 @@ namespace C__CRPG
                     if(basicItem.Quantity > 0)
                     {
                         Weapons.Add((Weapon)basicItem.Details);
+                        
                     }
                 }
             }
