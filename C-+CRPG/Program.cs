@@ -139,7 +139,7 @@ namespace C__CRPG
                 }
                 else
                 {
-                    Weapon weaponToEquip = _player.Weapons.SingleOrDefault(x => x.Name.ToLower() == inputWeaponName
+                    Weapon weaponToEquip = _player.Weapons.SingleOrDefault(x => x.Name.ToLower() == inputWeaponName  //Moved down to the next line. What this does, is it grabs inputweaponname out of the list, provided we can find it. and its either WeaponName or plural WeaponName
                     || x.NamePlural.ToLower() == inputWeaponName);
 
                     if (weaponToEquip == null)
@@ -187,6 +187,7 @@ namespace C__CRPG
                 {
                     Console.WriteLine("\n\t{0}", w.Name);
                 }
+
             }
 
             else
