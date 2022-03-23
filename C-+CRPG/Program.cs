@@ -204,6 +204,7 @@ namespace C__CRPG
             if(_player.CurrentLocation.Description != " ")
             {
                 Console.WriteLine("\t{0}\n", _player.CurrentLocation.Description);
+                
             }
         }
 

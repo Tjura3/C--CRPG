@@ -52,7 +52,11 @@ namespace C__CRPG
                 }
 
             }//item check
-            CurrentHitPoints = (CurrentHitPoints >= MaximumHitPoints) ? CurrentHitPoints += 0 : CurrentHitPoints++;
+            //CurrentHitPoints = (CurrentHitPoints <= MaximumHitPoints) ? CurrentHitPoints++ : CurrentHitPoints += 0; //Does this
+            if (CurrentHitPoints < MaximumHitPoints) //Equal this?
+            {
+                CurrentHitPoints++;
+            }
             CurrentLocation = loc;
             GameEngine.QuestProcessor(this, loc);
             GameEngine.MonsterProcessor(this, loc);

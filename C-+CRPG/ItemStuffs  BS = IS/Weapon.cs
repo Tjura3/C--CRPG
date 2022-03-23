@@ -9,7 +9,7 @@ namespace C__CRPG
         public int MaxDamage;
         public int MinDamage;
 
-        public Weapon(int iD, string name, string namePlural, int maxDamage, int minDamage):base(iD,name,namePlural)
+        public Weapon(int iD, string name, string namePlural, int minDamage, int maxDamage) :base(iD,name,namePlural)
         {
             MaxDamage = maxDamage;
             MinDamage = minDamage;
