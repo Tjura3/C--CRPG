@@ -75,7 +75,7 @@ namespace C__CRPG
             }
             else
             {
-                Console.WriteLine("You cant go there.");
+                Console.WriteLine("You cant go North.");
             }
         }
 
@@ -89,7 +89,7 @@ namespace C__CRPG
             }
             else
             {
-                Console.WriteLine("You cant go there.");
+                Console.WriteLine("You cant go South.");
             }
         }
 
@@ -102,7 +102,7 @@ namespace C__CRPG
             }
             else
             {
-                Console.WriteLine("You cant go there.");
+                Console.WriteLine("You cant go East.");
             }
         }
 
@@ -115,7 +115,7 @@ namespace C__CRPG
             }
             else
             {
-                Console.WriteLine("You cant go there.");
+                Console.WriteLine("You cant go West");
             }
         }
         #endregion
