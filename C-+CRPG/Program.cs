@@ -111,7 +111,7 @@ namespace C__CRPG
                     }
                 }
             }
-            else if (input.Contains("attack"))
+            else if (input.Contains("attack") || input == "a")
             {
                 if (_player.CurrentLocation.MonsterLivingHere == null)
                 {
@@ -189,7 +189,6 @@ namespace C__CRPG
                 }
 
             }
-
             else
             {
                 Console.WriteLine("I dont understand the language of tom.");

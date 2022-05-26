@@ -55,7 +55,7 @@ namespace C__CRPG
             //CurrentHitPoints = (CurrentHitPoints <= MaximumHitPoints) ? CurrentHitPoints++ : CurrentHitPoints += 0; //Does this
             if (CurrentHitPoints < MaximumHitPoints) //Equal this?
             {
-                CurrentHitPoints++;
+                CurrentHitPoints = MaximumHitPoints;
             }
             CurrentLocation = loc;
             GameEngine.QuestProcessor(this, loc);
