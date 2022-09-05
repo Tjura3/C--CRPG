@@ -159,6 +159,9 @@ namespace C__CRPG
             giantSpider.LootTable.Add(new LootItem(ItemByID(ITEM_ID_SPIDER_FANG), 75, true));
             giantSpider.LootTable.Add(new LootItem(ItemByID(ITEM_ID_SPIDER_SILK), 25, false));
 
+            Monster Gnushk = new Monster(4, "Gnushk", 100, 500, 3, 5, 5);
+
+
             Monsters.Add(rat);
             Monsters.Add(snake);
             Monsters.Add(giantSpider);

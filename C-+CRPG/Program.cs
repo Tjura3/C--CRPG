@@ -18,15 +18,13 @@ namespace C__CRPG
             GameEngine.Initialize();
                                                                                             //_player.Name = "Hiro the Dense"; Obsilete since V2 05
             _player.MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
-            BasicItem sword = new BasicItem(World.ItemByID(World.ITEM_ID_RUSTY_SWORD), 1); //this adds an item to the inventory
-            _player.Inventory.Add(sword);
-            
-            
+            BasicItem sword = new BasicItem(World.ItemByID(World.ITEM_ID_RUSTY_SWORD), 1);  
+            _player.Inventory.Add(sword); //this adds an item to the inventory
+
+
             //Console.WriteLine(RandomNumberGenorator.NumberBetween(4, 10)); rng test
 
-
-
-           while (true)
+            while (true)
            {
                 Console.Write("> ");
                 string userInput = Console.ReadLine();
@@ -43,9 +41,6 @@ namespace C__CRPG
                 ParseInput(cleanedInput);
 
            }//while
-
-           
-
 
         }//main
 
